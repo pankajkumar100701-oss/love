@@ -1,0 +1,89 @@
+@import "tailwindcss";
+
+:root {
+  --text-color: #ffffff;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  font-family: 'Playfair Display', serif;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  /* Set image as background */
+  background-image: url('/background.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+/* Enhanced Realistic Leaves matching background image */
+.leaf {
+  position: absolute;
+  top: -100px;
+  /* Autumn Orange/Yellow mix */
+  background: linear-gradient(135deg, #ff8c00, #ffd700);
+  border-radius: 50% 10% 50% 10%;
+  animation: fall linear infinite;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+}
+
+@keyframes fall {
+  0% { transform: translateY(0) rotate(0deg) translateX(0); opacity: 0; }
+  10% { opacity: 1; }
+  25% { transform: translateY(25vh) rotate(30deg) translateX(50px); }
+  50% { transform: translateY(50vh) rotate(-30deg) translateX(-50px); }
+  75% { transform: translateY(75vh) rotate(30deg) translateX(50px); }
+  100% { transform: translateY(110vh) rotate(720deg) translateX(0); opacity: 0; }
+}
+
+.main-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 4rem;
+  background: rgba(0, 0, 0, 0.4); /* Darker overlay for readability */
+  backdrop-filter: blur(15px);
+  border-radius: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  max-width: 600px;
+}
+
+.title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: var(--text-color);
+  font-style: italic;
+}
+
+.btn {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 1.2rem 3rem;
+  border-radius: 50px;
+  border: 1px solid white;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.btn:hover {
+  transform: scale(1.02);
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.signature {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  font-size: 1.2rem;
+  color: white;
+  font-style: italic;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
