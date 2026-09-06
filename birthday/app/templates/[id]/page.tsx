@@ -5,13 +5,13 @@ import FunTemplate from '../../components/FunTemplate';
 import ElegantGoldTemplate from '../../components/ElegantGoldTemplate';
 
 interface TemplatePageProps {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }
 
-export default function TemplatePage({ params }: TemplatePageProps) {
-  const { id } = params;
+export default async function TemplatePage({ params }: TemplatePageProps) {
+  const { id } = await params;
 
-  const templates: Record<string, JSX.Element> = {
+  const templates: Record<string, React.ReactNode> = {
     floral: <FloralTemplate />,
     minimalist: <MinimalistTemplate />,
     fun: <FunTemplate />,

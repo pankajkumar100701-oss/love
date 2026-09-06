@@ -1,8 +1,8 @@
 export default function ElegantGoldTemplate() {
   return (
-    <div className="bg-slate-900 p-16 rounded-2xl text-center border-2 border-yellow-600 shadow-2xl">
-      <h1 className="text-6xl font-serif text-yellow-500 mb-6">Celebration</h1>
-      <p className="text-2xl text-slate-300 tracking-widest">JOIN US FOR AN EVENING OF ELEGANCE</p>
+    <div className="bg-gradient-to-br from-amber-200 to-amber-500 p-16 rounded-3xl text-center shadow-2xl border-4 border-amber-300">
+      <h1 className="text-6xl font-extrabold text-white mb-6 tracking-tight">Celebrate!</h1>
+      <p className="text-2xl text-white font-medium">An unforgettable evening awaits.</p>
     </div>
   );
 }
