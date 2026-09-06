@@ -39,7 +39,7 @@ export const GameCanvas = () => {
     const loadAssets = () => {
       const bird = new Image(); bird.src = '/assets/bird.png';
       const pipe = new Image(); pipe.src = '/assets/pipe.png';
-      const bg = new Image(); bg.src = '/assets/background.png';
+      const bg = new Image(); bg.src = '/assets/background.avif';
       assets.current = { bird, pipe, bg };
     };
     loadAssets();
@@ -115,11 +115,20 @@ export const GameCanvas = () => {
         return;
     }
 
-    // Classic background + procedural clouds
-    ctx.fillStyle = '#4EC0CA'; // Softer sky blue
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    // Render custom background image
+    const bg = assets.current?.bg;
+    if (bg && bg.complete && bg.naturalWidth > 0) {
+        ctx.drawImage(bg, 0, 0, canvas.width, canvas.height);
+    } else {
+        // Fallback gradient if image not loaded
+        const gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
+        gradient.addColorStop(0, '#FF4500'); // Reddish top
+        gradient.addColorStop(1, '#3498DB'); // Blue bottom
+        ctx.fillStyle = gradient;
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+    }
     
-    ctx.fillStyle = 'rgba(255, 255, 255, 0.9)'; // Slightly more opaque clouds
+    ctx.fillStyle = 'rgba(255, 255, 255, 0.6)'; // Slightly more transparent clouds
     gameState.current.clouds.forEach(c => {
       ctx.beginPath();
       ctx.arc(c.x, c.y, c.size, 0, Math.PI * 2);
@@ -154,15 +163,15 @@ export const GameCanvas = () => {
       ctx.fillRect(135, gameState.current.birdY + 10, 10, 10);
     }
 
-    // Classic Blue Pipes with glow
+    // Classic Red Pipes with glow
     gameState.current.pipes.forEach((p) => {
-        ctx.fillStyle = '#3498DB'; // Bright blue
-        ctx.strokeStyle = '#2980B9'; // Darker blue border
+        ctx.fillStyle = '#E74C3C'; // Vibrant red
+        ctx.strokeStyle = '#C0392B'; // Darker red border
         ctx.lineWidth = 3;
         
         // Add glow effect
         ctx.shadowBlur = 10;
-        ctx.shadowColor = '#5DADE2';
+        ctx.shadowColor = '#F1948A';
         
         // Gap size
         const gapSize = 120;
