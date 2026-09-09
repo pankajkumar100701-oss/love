@@ -16,7 +16,7 @@ export default function Home() {
           <p className="hero__intro">We work alongside rural communities to build lives rooted in equality, dignity and ecological care.</p>
           <div className="hero__actions"><Link href="/engagement/programs" className="button button--light">Explore our work <ArrowDownRight size={17} /></Link><Link href="/support" className="text-link">Stand with us <ArrowUpRight size={16} /></Link></div>
         </div>
-        <div className="hero__portrait"><Image src="/new-hero-image.jpeg" alt="A community member participating in a Jagori Rural programme" fill sizes="(max-width: 700px) 42vw, 24vw" className="object-cover" /><p>Rooted in community<br />Led by people</p></div>
+        <div className="hero__portrait"><Image src="https://static.wixstatic.com/media/e07cd5_07be529141ba4f718ae75d818f56f1e5~mv2.jpg/v1/fill/w_720,h_960,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/e07cd5_07be529141ba4f718ae75d818f56f1e5~mv2.jpg" alt="A community member participating in a Jagori Rural programme" fill sizes="(max-width: 700px) 42vw, 24vw" className="object-cover" /><p>Rooted in community<br />Led by people</p></div>
         <p className="hero__scroll">Scroll to discover <span>↓</span></p>
       </section>
 
