@@ -28,8 +28,8 @@ export function SiteHeader() {
   return (
     <header className={`site-header ${isHome ? "site-header--home" : ""}`}>
       <Link href="/" className="brand" aria-label="Jagori Rural home">
-        <Image src="/logo.png" alt="" width={50} height={47} className="brand__mark" priority />
-        <span className="brand__name">Jagori Rural<br /><em>Charitable Trust</em></span>
+        <Image src="/jagori-logo-clean.png" alt="" width={50} height={47} className="brand__mark" priority />
+        <span className="brand__name">Jagori Rural Charitable Trust</span>
       </Link>
 
       <nav className="desktop-nav" aria-label="Primary navigation">
