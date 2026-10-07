@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+:root {
+  --cream: #f7f3ec;
+  --sand: #ece4d6;
+  --sage: #7d9478;
+  --sage-deep: #3f5a45;
+  --forest: #1f3326;
+  --clay: #c98b6b;
+  --ink: #26302a;
+}
+
+@theme inline {
+  --color-cream: var(--cream);
+  --color-sand: var(--sand);
+  --color-sage: var(--sage);
+  --color-sage-deep: var(--sage-deep);
+  --color-forest: var(--forest);
+  --color-clay: var(--clay);
+  --color-ink: var(--ink);
+  --font-sans: var(--font-dm-sans);
+  --font-serif: var(--font-fraunces);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--cream);
+  color: var(--ink);
+}
+
+.grain {
+  background-image: radial-gradient(rgba(31, 51, 38, 0.06) 1px, transparent 1px);
+  background-size: 4px 4px;
+}
+
+@keyframes drift {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(12px, -16px) scale(1.04); }
+}
+
+.animate-drift {
+  animation: drift 14s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-drift { animation: none; }
+  html { scroll-behavior: auto; }
+}
