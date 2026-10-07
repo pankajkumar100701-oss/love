@@ -20,8 +20,9 @@ html {
   scroll-padding-top: 5rem;
 }
 
+html,
 body {
-  background: var(--color-linen);
+  background: var(--color-forest-950);
   color: var(--color-charcoal);
   font-family: var(--font-sans);
   -webkit-tap-highlight-color: transparent;
@@ -30,19 +31,6 @@ body {
 ::selection {
   background: var(--color-gold);
   color: var(--color-forest-950);
-}
-
-/* Native date inputs styled to sit on dark glass */
-.date-input::-webkit-calendar-picker-indicator {
-  filter: invert(78%) sepia(20%) saturate(500%) hue-rotate(5deg);
-  cursor: pointer;
-  opacity: 0.8;
-}
-.date-input {
-  color-scheme: dark;
-}
-.date-input-light {
-  color-scheme: light;
 }
 
 .grain::after {

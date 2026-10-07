@@ -15,9 +15,9 @@ const jakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Dastak Retreat — Boutique Valley-View Stay in Slate Godam, Dharamshala",
+  title: "Dastak Retreat — Slate Godam, Dharamshala",
   description:
-    "A pet-friendly boutique retreat in Slate Godam, Kangra Valley. Valley-view suites, forest walks, Himachali meals and the best rate guaranteed when you book direct.",
+    "A unique hospitality hideaway in Slate Godam, Dharamshala, with breathtaking Kangra Valley views. Book direct for the best rate.",
 };
 
 export const viewport: Viewport = {
